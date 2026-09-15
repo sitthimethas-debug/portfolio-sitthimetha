@@ -242,6 +242,24 @@ async function seedDatabase() {
         pdf: 'Certificate/TDGA - Digital Literacy.pdf',
         thumb: 'Certificate/thumbnails/TDGA - Digital Literacy.png',
         order: 12
+      },
+      {
+        title: 'ปริญญาบัตร ปริญญาตรี วิทยาศาสตรบัณฑิต (วท.บ.) สาขาอนามัยสิ่งแวดล้อม',
+        issuer: 'คณะสาธารณสุขศาสตร์ มหาวิทยาลัยบูรพา',
+        year: 'พ.ศ. 2552',
+        tag: 'ปริญญาบัตร',
+        pdf: 'Certificate/SITTHIMETHA_SRIBOOTDA_degreeCertificate.pdf',
+        thumb: 'Certificate/thumbnails/SITTHIMETHA_SRIBOOTDA_degreeCertificate.png',
+        order: 13
+      },
+      {
+        title: 'หนังสือสำคัญการเปลี่ยนชื่อ-สกุล (ใบเปลี่ยนชื่อ-สกุล)',
+        issuer: 'สำนักทะเบียนท้องถิ่น • เอกสารราชการประกอบคุณวุฒิการศึกษา',
+        year: 'เอกสารแนบ',
+        tag: 'เอกสารเปลี่ยนชื่อ',
+        pdf: 'Certificate/ใบเปลี่ยนชื่อ - สกุล.pdf',
+        thumb: 'Certificate/thumbnails/ใบเปลี่ยนชื่อ - สกุล.png',
+        order: 14
       }
     ];
 
