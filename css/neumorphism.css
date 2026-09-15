@@ -1,0 +1,383 @@
+/* ==========================================================================
+   NEUMORPHISM DESIGN SYSTEM (CLEAN PURE SOFT WHITE & HIGH CONTRAST)
+   Clean, Tactile, Modern Soft-UI Variables & Components
+   ========================================================================== */
+
+:root {
+  /* Core Palette - Clean Crisp Soft White Base */
+  --bg-primary: #f0f3f8;
+  --bg-surface: #f0f3f8;
+  --bg-surface-elevated: #ffffff;
+  --bg-surface-sunken: #e4e9f2;
+  
+  /* Text & Typography Colors - High Contrast Slate & Ebony */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
+  
+  /* Neumorphic Shadow Configuration (Default Light: Top-Left @ 135deg) */
+  --shadow-light: #ffffff;
+  --shadow-dark: #cad3df;
+  --shadow-dark-deep: #adb9cb;
+  --accent-color: #0f172a;
+  --accent-soft: #e2e8f0;
+  --accent-highlight: #2563eb;
+  --accent-emerald: #00e676; /* Bright Electric Emerald Green */
+  --accent-emerald-glow: rgba(0, 230, 118, 0.7);
+
+  /* Standard Neumorphic Elevations */
+  --neu-flat: 8px 8px 18px var(--shadow-dark), -8px -8px 18px var(--shadow-light);
+  --neu-flat-sm: 4px 4px 10px var(--shadow-dark), -4px -4px 10px var(--shadow-light);
+  --neu-flat-lg: 14px 14px 28px var(--shadow-dark), -14px -14px 28px var(--shadow-light);
+  --neu-flat-floating: 20px 20px 40px var(--shadow-dark), -16px -16px 36px var(--shadow-light);
+  
+  /* Inset (Pressed / Sunken) Shadows */
+  --neu-inset: inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light);
+  --neu-inset-sm: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
+  --neu-inset-lg: inset 8px 8px 16px var(--shadow-dark), inset -8px -8px 16px var(--shadow-light);
+  
+  /* Convex / Concave Gradients */
+  --neu-convex: linear-gradient(145deg, #ffffff, #dce3ee);
+  --neu-concave: linear-gradient(145deg, #dce3ee, #ffffff);
+
+  /* Borders & Highlights */
+  --border-subtle: 1px solid rgba(255, 255, 255, 0.9);
+  --border-dark-subtle: 1px solid rgba(173, 185, 203, 0.3);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Light Direction Variants */
+[data-light="top-right"] {
+  --neu-flat: -8px 8px 18px var(--shadow-dark), 8px -8px 18px var(--shadow-light);
+  --neu-flat-sm: -4px 4px 10px var(--shadow-dark), 4px -4px 10px var(--shadow-light);
+  --neu-flat-lg: -14px 14px 28px var(--shadow-dark), 14px -14px 28px var(--shadow-light);
+  --neu-inset: inset -5px 5px 10px var(--shadow-dark), inset 5px -5px 10px var(--shadow-light);
+}
+
+[data-light="bottom-left"] {
+  --neu-flat: 8px -8px 18px var(--shadow-dark), -8px 8px 18px var(--shadow-light);
+  --neu-flat-sm: 4px -4px 10px var(--shadow-dark), -4px 4px 10px var(--shadow-light);
+  --neu-flat-lg: 14px -14px 28px var(--shadow-dark), -14px 14px 28px var(--shadow-light);
+  --neu-inset: inset 5px -5px 10px var(--shadow-dark), inset -5px 5px 10px var(--shadow-light);
+}
+
+[data-light="bottom-right"] {
+  --neu-flat: -8px -8px 18px var(--shadow-dark), 8px 8px 18px var(--shadow-light);
+  --neu-flat-sm: -4px -4px 10px var(--shadow-dark), 4px 4px 10px var(--shadow-light);
+  --neu-flat-lg: -14px -14px 28px var(--shadow-dark), 14px 14px 28px var(--shadow-light);
+  --neu-inset: inset -5px -5px 10px var(--shadow-dark), inset 5px 5px 10px var(--shadow-light);
+}
+
+/* Base Body Style */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Sarabun', 'TH Sarabun New', 'TH SarabunPSK', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Neumorphic Reusable Utility Classes */
+.neu-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--neu-flat);
+  border: var(--border-subtle);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.neu-card-sm {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--neu-flat-sm);
+  border: var(--border-subtle);
+}
+
+.neu-card-floating {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--neu-flat-floating);
+  border: var(--border-subtle);
+}
+
+.neu-well {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--neu-inset);
+}
+
+.neu-well-pill {
+  background: var(--bg-surface);
+  border-radius: var(--radius-full);
+  box-shadow: var(--neu-inset-sm);
+}
+
+/* Neumorphic Buttons */
+.neu-btn {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border: none;
+  outline: none;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--neu-flat-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all var(--transition-fast);
+  user-select: none;
+  -webkit-user-select: none;
+  text-decoration: none;
+  position: relative;
+}
+
+.neu-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--neu-flat);
+}
+
+.neu-btn:active, .neu-btn.active {
+  transform: translateY(1px);
+  box-shadow: var(--neu-inset);
+  color: var(--text-primary);
+}
+
+.neu-btn-icon {
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.neu-btn-primary {
+  background: var(--text-primary);
+  color: #ffffff;
+  box-shadow: 6px 6px 16px rgba(15, 23, 42, 0.25), -4px -4px 12px rgba(255, 255, 255, 0.9);
+}
+
+.neu-btn-primary:hover {
+  background: #1e293b;
+  color: #ffffff;
+  box-shadow: 8px 8px 20px rgba(15, 23, 42, 0.3), -4px -4px 14px rgba(255, 255, 255, 1);
+}
+
+.neu-btn-primary:active {
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5), inset -2px -2px 6px rgba(255, 255, 255, 0.2);
+}
+
+/* Neumorphic Input & Search */
+.neu-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bg-surface);
+  border-radius: var(--radius-full);
+  box-shadow: var(--neu-inset);
+  padding: 4px 16px;
+  transition: box-shadow var(--transition-normal);
+}
+
+.neu-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 12px 10px;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  width: 100%;
+  font-family: inherit;
+}
+
+.neu-input::placeholder {
+  color: var(--text-muted);
+}
+
+.neu-input-wrapper:focus-within {
+  box-shadow: var(--neu-inset-lg), 0 0 0 2px rgba(15, 23, 42, 0.15);
+}
+
+/* Neumorphic Badge / Pill */
+.neu-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: var(--neu-flat-sm);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  letter-spacing: 0.2px;
+}
+
+.neu-badge-inset {
+  box-shadow: var(--neu-inset-sm);
+  background: var(--bg-surface);
+}
+
+.neu-badge-accent {
+  box-shadow: var(--neu-inset-sm);
+  background: var(--bg-surface-sunken);
+  color: var(--text-primary);
+}
+
+/* Active Live Status Indicator Dot - Glowing Neon Emerald Green with Radar Ping */
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-emerald);
+  box-shadow: 0 0 10px var(--accent-emerald), 0 0 18px var(--accent-emerald-glow);
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+  animation: neon-breathe 2s infinite ease-in-out;
+}
+
+.status-dot::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 50%;
+  background: var(--accent-emerald);
+  opacity: 0.6;
+  animation: radar-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes neon-breathe {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px var(--accent-emerald), 0 0 18px var(--accent-emerald-glow);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 14px var(--accent-emerald), 0 0 24px var(--accent-emerald);
+  }
+}
+
+@keyframes radar-ping {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  70%, 100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+/* Neumorphic Switch */
+.neu-switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.neu-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.neu-switch-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-surface);
+  border-radius: 34px;
+  box-shadow: var(--neu-inset);
+  transition: var(--transition-normal);
+}
+
+.neu-switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--bg-surface);
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px var(--shadow-dark), -2px -2px 5px var(--shadow-light);
+  transition: var(--transition-normal);
+}
+
+.neu-switch input:checked + .neu-switch-slider {
+  background-color: #0f172a;
+}
+
+.neu-switch input:checked + .neu-switch-slider:before {
+  transform: translateX(26px);
+  background-color: #f0f3f8;
+}
+
+/* Range Slider */
+.neu-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--bg-surface);
+  box-shadow: var(--neu-inset);
+  outline: none;
+  margin: 10px 0;
+}
+
+.neu-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  box-shadow: 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
+  cursor: pointer;
+  border: 2px solid #0f172a;
+  transition: transform 0.1s ease;
+}
+
+.neu-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.neu-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  box-shadow: 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
+  cursor: pointer;
+  border: 2px solid #0f172a;
+}

@@ -1,0 +1,603 @@
+/* ==========================================================================
+   LANDING PAGE (HERO POSTER LAYOUT) STYLESHEET
+   Clean Pure White Neumorphism - Sitthimetha Sributta Personal Portfolio
+   ========================================================================== */
+
+.landing-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  position: relative;
+  font-family: 'Sarabun', 'TH Sarabun New', 'TH SarabunPSK', sans-serif;
+}
+
+/* Ambient Background Glow */
+.landing-bg-decor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.landing-glow-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.65;
+}
+
+.glow-1 {
+  top: -10%;
+  left: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(240, 243, 248, 0) 70%);
+}
+
+.glow-2 {
+  bottom: -15%;
+  right: -5%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(210, 224, 242, 0.45) 0%, rgba(240, 243, 248, 0) 70%);
+}
+
+/* ==========================================================================
+   LANDING TOP HEADER (MOVED OUTSIDE THE MAIN BOARD)
+   ========================================================================== */
+.landing-header {
+  position: relative;
+  z-index: 10;
+  max-width: 1260px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 24px 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.landing-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.brand-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--bg-surface);
+  box-shadow: var(--neu-flat-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-highlight);
+  flex-shrink: 0;
+}
+
+.brand-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-main-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.brand-sub-text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-highlight);
+  letter-spacing: 0.5px;
+}
+
+.live-update-pill {
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   MAIN HERO POSTER WRAPPER
+   ========================================================================== */
+.landing-main-wrapper {
+  position: relative;
+  z-index: 10;
+  max-width: 1260px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px 24px 30px 24px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.hero-poster-board {
+  width: 100%;
+  background: var(--bg-surface);
+  border-radius: 36px;
+  box-shadow: var(--neu-flat-floating);
+  border: var(--border-subtle);
+  display: grid;
+  grid-template-columns: 42% 58%;
+  overflow: hidden;
+  position: relative;
+  min-height: 640px;
+}
+
+/* ==========================================================================
+   LEFT COLUMN: PERSON PORTRAIT (SITTHIMETHA SRIBUTTA)
+   ========================================================================== */
+.poster-left-col {
+  position: relative;
+  background: radial-gradient(circle at 50% 30%, #ffffff 0%, #e6edf7 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 40px 20px 0 20px;
+  overflow: hidden;
+  box-shadow: inset -5px 0 15px rgba(173, 185, 203, 0.2);
+}
+
+.portrait-glow-halo {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(240, 243, 248, 0) 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.poster-portrait-img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(8px 12px 24px rgba(15, 23, 42, 0.18)) drop-shadow(-4px -4px 16px rgba(255, 255, 255, 0.9));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-poster-board:hover .poster-portrait-img {
+  transform: scale(1.03) translateY(-4px);
+}
+
+.portrait-floating-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  box-shadow: 4px 4px 12px rgba(173, 185, 203, 0.4), -2px -2px 8px rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   RIGHT COLUMN: PERSONAL IDENTITY, PILLARS & ENTER CTA
+   ========================================================================== */
+.poster-right-col {
+  padding: 48px 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+}
+
+/* Name & Position Header Section */
+.poster-identity-header {
+  margin-bottom: 24px;
+}
+
+.poster-person-name {
+  font-size: 2.7rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+
+.poster-role-tag {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.poster-experience-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  box-shadow: var(--neu-inset-sm);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0b5c2d;
+  border-left: 4px solid #00c853;
+  margin-top: 6px;
+}
+
+/* 4-Pillar Portfolio Highlight Cards (Recommended Content) */
+.poster-pillars-container {
+  margin-bottom: 28px;
+}
+
+.pillars-heading {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.pillar-card {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: var(--bg-surface);
+  box-shadow: var(--neu-flat-sm);
+  border: var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.pillar-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--neu-flat);
+}
+
+.pillar-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--bg-surface);
+  box-shadow: var(--neu-inset-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.pillar-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.pillar-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Call-to-Action Buttons Row */
+.poster-action-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.poster-enter-btn {
+  padding: 20px 44px;
+  border-radius: var(--radius-full);
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  background: #0f172a;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  box-shadow: 8px 8px 20px rgba(15, 23, 42, 0.25), -6px -6px 16px rgba(255, 255, 255, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  width: 100%;
+}
+
+.poster-enter-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: 0.6s ease;
+}
+
+.poster-enter-btn:hover {
+  transform: translateY(-3px) scale(1.015);
+  background: #1e293b;
+  box-shadow: 12px 12px 28px rgba(15, 23, 42, 0.3), -8px -8px 20px rgba(255, 255, 255, 1);
+}
+
+.poster-enter-btn:hover::before {
+  left: 100%;
+}
+
+.poster-enter-btn:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.5), inset -2px -2px 8px rgba(255, 255, 255, 0.2);
+}
+
+.enter-icon-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.poster-enter-btn:hover .enter-icon-circle {
+  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.enter-sub-caption {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Landing Footer */
+.landing-footer {
+  position: relative;
+  z-index: 10;
+  padding: 18px 40px;
+  text-align: center;
+  border-top: 1px solid rgba(173, 185, 203, 0.25);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Transition Curtain / Overlay */
+.page-transition-curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-primary);
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.6s cubic-bezier(0.7, 0, 0.3, 1), opacity 0.3s ease;
+}
+
+.page-transition-curtain.active {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT (PC, LAPTOP, TABLET, MOBILE)
+   ========================================================================== */
+.pillar-card-wide {
+  grid-column: span 2;
+}
+
+@media (max-width: 1200px) {
+  .hero-poster-board {
+    grid-template-columns: 40% 60%;
+    min-height: auto;
+  }
+  .poster-right-col {
+    padding: 36px 32px;
+  }
+  .poster-person-name {
+    font-size: clamp(2.2rem, 3.8vw, 2.6rem);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-poster-board {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .poster-left-col {
+    padding: 36px 20px 0 20px;
+    min-height: 360px;
+    justify-content: center;
+  }
+  .poster-portrait-img {
+    max-height: 380px;
+  }
+  .poster-right-col {
+    padding: 32px 24px;
+  }
+  .poster-person-name {
+    font-size: clamp(2rem, 4.5vw, 2.4rem);
+    text-align: center;
+  }
+  .poster-role-tag {
+    justify-content: center;
+    font-size: clamp(1.15rem, 3vw, 1.3rem);
+  }
+  .poster-identity-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pillars-heading {
+    justify-content: center;
+  }
+  .pillars-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .pillar-card-wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-header {
+    padding: 16px 20px 8px 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .brand-main-text {
+    font-size: 1.1rem;
+  }
+  .brand-sub-text {
+    font-size: 0.75rem;
+  }
+  .landing-main-wrapper {
+    padding: 10px 16px 24px 16px;
+  }
+  .hero-poster-board {
+    border-radius: 28px;
+  }
+  .poster-left-col {
+    padding: 24px 16px 0 16px;
+    min-height: 300px;
+  }
+  .poster-portrait-img {
+    max-height: 320px;
+  }
+  .poster-right-col {
+    padding: 28px 20px;
+  }
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .pillar-card-wide {
+    grid-column: span 1 !important;
+  }
+  .poster-enter-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 18px 24px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-header {
+    padding: 14px 14px 6px 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .live-update-pill {
+    padding: 6px 14px;
+    font-size: 0.78rem;
+  }
+  .landing-main-wrapper {
+    padding: 8px 10px 20px 10px;
+  }
+  .hero-poster-board {
+    border-radius: 22px;
+  }
+  .poster-left-col {
+    padding: 20px 10px 0 10px;
+    min-height: 260px;
+  }
+  .poster-portrait-img {
+    max-height: 270px;
+  }
+  .portrait-floating-badge {
+    bottom: 12px;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+  }
+  .poster-right-col {
+    padding: 20px 14px;
+  }
+  .poster-person-name {
+    font-size: 1.75rem;
+  }
+  .poster-role-tag {
+    font-size: 1.05rem;
+  }
+  .poster-experience-badge {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    text-align: center;
+    justify-content: center;
+  }
+  .pillar-card {
+    padding: 12px 14px;
+  }
+  .pillar-title {
+    font-size: 0.9rem;
+  }
+  .poster-enter-btn {
+    padding: 15px 18px;
+    font-size: 0.98rem;
+    gap: 10px;
+  }
+  .landing-footer {
+    padding: 14px 16px;
+    font-size: 0.78rem;
+  }
+}

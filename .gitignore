@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Environment & Temp Logs
+.env
+.env.local
+*.log
+
+# OS System Files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Vercel
+.vercel
