@@ -254,74 +254,48 @@
   margin-top: 6px;
 }
 
-/* 4-Pillar Portfolio Highlight Cards (Recommended Content) */
+/* 5-Pillar Portfolio Showcase Bullet List (Subtle & Clean) */
 .poster-pillars-container {
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .pillars-heading {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  margin-bottom: 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.pillars-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.pillar-card {
-  padding: 14px 16px;
-  border-radius: 18px;
-  background: var(--bg-surface);
-  box-shadow: var(--neu-flat-sm);
-  border: var(--border-subtle);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.pillar-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--neu-flat);
-}
-
-.pillar-icon-box {
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
-  background: var(--bg-surface);
+.pillars-bullet-list {
+  list-style: none;
+  padding: 14px 18px;
+  margin: 0;
+  background: var(--bg-inset);
   box-shadow: var(--neu-inset-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #2563eb;
-  flex-shrink: 0;
-  font-size: 1.1rem;
-}
-
-.pillar-text-group {
+  border-radius: var(--radius-md);
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 
-.pillar-title {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  line-height: 1.25;
-}
-
-.pillar-desc {
-  font-size: 0.78rem;
-  color: var(--text-muted);
+.pillar-bullet-item {
+  font-size: 0.92rem;
   font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.bullet-dot {
+  color: #2563eb;
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
 /* Call-to-Action Buttons Row */
@@ -487,13 +461,6 @@
   .pillars-heading {
     justify-content: center;
   }
-  .pillars-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .pillar-card-wide {
-    grid-column: span 2;
-  }
 }
 
 @media (max-width: 768px) {
@@ -527,11 +494,12 @@
   .poster-right-col {
     padding: 28px 20px;
   }
-  .pillars-grid {
-    grid-template-columns: 1fr;
+  .pillars-bullet-list {
+    padding: 12px 14px;
+    gap: 6px;
   }
-  .pillar-card-wide {
-    grid-column: span 1 !important;
+  .pillar-bullet-item {
+    font-size: 0.88rem;
   }
   .poster-enter-btn {
     width: 100%;
@@ -585,11 +553,11 @@
     text-align: center;
     justify-content: center;
   }
-  .pillar-card {
-    padding: 12px 14px;
+  .pillars-bullet-list {
+    padding: 10px 12px;
   }
-  .pillar-title {
-    font-size: 0.9rem;
+  .pillar-bullet-item {
+    font-size: 0.84rem;
   }
   .poster-enter-btn {
     padding: 15px 18px;
