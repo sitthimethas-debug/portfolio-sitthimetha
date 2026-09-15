@@ -5,6 +5,8 @@
   "main": "index.html",
   "scripts": {
     "start": "npx serve .",
+    "push": "node scripts/push.js",
+    "autopush": "node scripts/push.js",
     "seed-db": "node scripts/seed-database.js"
   },
   "dependencies": {
