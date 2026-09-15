@@ -1,0 +1,22 @@
+{
+  "name": "portfolio-sitthimetha",
+  "version": "1.0.0",
+  "description": "Personal Portfolio Web Application - Sitthimetha Sributta",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "seed-db": "node scripts/seed-database.js"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
+    "dotenv": "^16.4.7"
+  },
+  "keywords": [
+    "portfolio",
+    "public-health",
+    "environmental-health",
+    "neumorphism"
+  ],
+  "author": "Sitthimetha Sributta",
+  "license": "MIT"
+}
