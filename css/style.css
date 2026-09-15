@@ -1338,13 +1338,19 @@ body {
     padding-bottom: 60px;
   }
   .hero-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     text-align: left;
-    gap: 36px;
+    gap: 28px;
   }
   .hero-visual {
+    order: -1;
     max-width: 440px;
     margin: 0 auto;
+    width: 100%;
+  }
+  .hero-content {
+    order: 1;
     width: 100%;
   }
   .hero-desc {
