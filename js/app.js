@@ -207,7 +207,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openCertModal(data) {
     if (!certModal) return;
-    if (certModalImg) certModalImg.src = data.img || '';
+
+    const singleWrap = document.getElementById('certModalSingleWrap');
+    const multiWrap = document.getElementById('certModalMultiWrap');
+
+    if (data.imgs) {
+      const imgList = data.imgs.split(',').map(s => s.trim());
+      if (singleWrap) singleWrap.style.display = 'none';
+      if (multiWrap) {
+        multiWrap.style.display = 'flex';
+        multiWrap.innerHTML = imgList.map((src, idx) => 
+          `<div style="text-align: center; flex: 1; min-width: 260px;">
+             <div style="font-size: 0.8rem; font-weight: 700; color: #2563eb; margin-bottom: 6px; background: var(--bg-surface); padding: 4px 10px; border-radius: 12px; display: inline-block; box-shadow: var(--neu-flat-sm);">
+               หน้า ${idx + 1} ${idx === 0 ? '(ซ้าย: หน้าแรก)' : idx === 1 ? '(กลาง: หน้า 2)' : '(ขวา: หน้า 3)'}
+             </div>
+             <img src="${src}" alt="เอกสาร หน้า ${idx + 1}" style="max-height: 58vh; width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); border: 1px solid rgba(173, 185, 203, 0.3);">
+           </div>`
+        ).join('');
+      }
+    } else {
+      if (multiWrap) {
+        multiWrap.style.display = 'none';
+        multiWrap.innerHTML = '';
+      }
+      if (singleWrap) {
+        singleWrap.style.display = 'flex';
+        if (certModalImg) certModalImg.src = data.img || '';
+      }
+    }
+
     if (certModalTitle) certModalTitle.textContent = data.title || 'ใบประกาศนียบัตร';
     if (certModalIssuer) certModalIssuer.textContent = data.issuer || '';
     if (certModalTag) certModalTag.textContent = data.tag || 'ใบรับรอง';
@@ -226,12 +254,13 @@ document.addEventListener('DOMContentLoaded', () => {
       e.stopPropagation();
       const pdf = el.getAttribute('data-pdf');
       const img = el.getAttribute('data-img');
+      const imgs = el.getAttribute('data-imgs');
       const title = el.getAttribute('data-title');
       const issuer = el.getAttribute('data-issuer');
       const year = el.getAttribute('data-year');
       const tag = el.getAttribute('data-tag');
 
-      openCertModal({ pdf, img, title, issuer, year, tag });
+      openCertModal({ pdf, img, imgs, title, issuer, year, tag });
     });
   });
 
