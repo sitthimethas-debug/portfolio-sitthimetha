@@ -77,6 +77,10 @@
   --neu-inset: inset -5px -5px 10px var(--shadow-dark), inset 5px 5px 10px var(--shadow-light);
 }
 
+*, *::before, *::after {
+  font-family: 'Sarabun', 'TH Sarabun New', 'TH SarabunPSK', system-ui, -apple-system, sans-serif;
+}
+
 /* Base Body Style */
 body {
   background-color: var(--bg-primary);
