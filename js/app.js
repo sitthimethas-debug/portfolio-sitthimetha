@@ -218,10 +218,10 @@ document.addEventListener('DOMContentLoaded', () => {
         multiWrap.style.display = 'flex';
         multiWrap.innerHTML = imgList.map((src, idx) => 
           `<div style="text-align: center; flex: 1; min-width: 260px;">
-             <div style="font-size: 0.8rem; font-weight: 700; color: #2563eb; margin-bottom: 6px; background: var(--bg-surface); padding: 4px 10px; border-radius: 12px; display: inline-block; box-shadow: var(--neu-flat-sm);">
-               หน้า ${idx + 1} ${idx === 0 ? '(ซ้าย: หน้าแรก)' : idx === 1 ? '(กลาง: หน้า 2)' : '(ขวา: หน้า 3)'}
+             <div style="font-size: 0.85rem; font-weight: 800; color: #2563eb; margin-bottom: 6px; background: var(--bg-surface); padding: 5px 14px; border-radius: 14px; display: inline-block; box-shadow: var(--neu-flat-sm);">
+               ครั้งที่ ${idx + 1}
              </div>
-             <img src="${src}" alt="เอกสาร หน้า ${idx + 1}" style="max-height: 58vh; width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); border: 1px solid rgba(173, 185, 203, 0.3);">
+             <img src="${src}" alt="ครั้งที่ ${idx + 1}" style="max-height: 58vh; width: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); border: 1px solid rgba(173, 185, 203, 0.3);">
            </div>`
         ).join('');
       }
